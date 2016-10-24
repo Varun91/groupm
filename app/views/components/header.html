@@ -1,0 +1,32 @@
+<div>
+<md-content class="header-style" md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+      <h2>
+          <span>GroupM Coding Assignment</span>
+      </h2>
+      <span flex></span>
+      <md-input-container>
+        <label><span class="glyphicon glyphicon-search"></span></p></label>
+        <input ng-model="searchText">
+      </md-input-container>
+  </md-content>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Users Name</th>
+                <th>Users Email</th>
+                <th>Posts Title</th>
+                <th>Posts Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="post in posts|filter:searchText track by $index">
+                <td>{{post.name}}</td>
+                <td>{{post.email}}</td>
+                <td>{{post.title}}</td>
+                <td style="white-space: pre;" >{{post.body}}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
